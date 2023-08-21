@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  app_proxy:
+    environment:
+      APP_HOST: $APP_PORTAINER_IP
+      APP_PORT: 9000
+  server:
+    image: portainer/portainer-ce:2.18.4@sha256:94c3056dbe879f3a3df06b427713392a0962924914f5c2fc557de3797f59f926
+    command: '-H unix:///var/run/docker.sock'
+    environment:
+      - VIRTUAL_PORT=9000
+    networks:
+      default:
+        ipv4_address: $APP_PORTAINER_IP
+    restart: on-failure
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+volumes:
+  portainer_data: null
