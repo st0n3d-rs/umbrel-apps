@@ -2,7 +2,7 @@ manifestVersion: 1
 id: strs-iobroker
 category: Automation
 name: ioBroker
-version: 8.1.0
+version: v8.1.0
 tagline: Automate your life.
 description: Open Source automation platform.
 developer: ioBroker
