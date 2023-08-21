@@ -13,5 +13,3 @@ services:
     restart: always
     volumes:
       - iobrokerdata:/opt/iobroker
-volumes:
-  iobrokerdata: null
