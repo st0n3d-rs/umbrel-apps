@@ -54,7 +54,7 @@ jobs:
               run: echo "hash=$(curl -sL https://hub.docker.com/v2/repositories/${{ env.DOCKER }}/tags/${{ steps.get_latest.outputs.latest }} | jq -r .digest)" >> $GITHUB_OUTPUT
 
             - name: Update the version
-              uses: fjogeleit/yaml-update-action@main
+              uses: fjogeleit/yaml-update-action@master
               if: ${{ steps.get_latest.outputs.latest != 'null' && steps.check_files.outputs.files_exists == 'true' }}
               with:
                 valueFile: 'strs-${{ env.ID }}/umbrel-app.yml'
