@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   server:
-    image: iobroker/iobroker:v.8.1.0@sha256:042d541cf4a0e2a1eb832d055b6d3e68cc32a0cb4057dc0680a42318cd3c232b
+    image: buanet/iobroker:v8.1.0@sha256:50b8eb3434904c692e1ae186400bbf6025db87e310f166fe923e5037a7e15298
     network_mode: host
     restart: always
     volumes:
