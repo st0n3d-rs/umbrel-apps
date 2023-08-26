@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  app_proxy:
+    environment:
+      APP_HOST: $APP_IOBROKER_IP
+      APP_PORT: 8081
+      PROXY_AUTH_ADD: 'false'
+  server:
+    image: buanet/iobroker:v8.1.0@sha256:50b8eb3434904c692e1ae186400bbf6025db87e310f166fe923e5037a7e15298
+    networks:
+      internal:
+        ipv4_address: $APP_IOBROKER_IP
+    restart: always
+      - ${APP_DATA_DIR}/data:/opt/iobroker
