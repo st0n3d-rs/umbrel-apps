@@ -6,7 +6,7 @@ services:
       APP_PORT: 9981
       PROXY_AUTH_ADD: 'false'
   server:
-    image: buanet/ioBroker.docker:v9.1.2@null
+    image: buanet/ioBroker:latest
     command: '-H unix:///var/run/docker.sock'
     environment:
       - VIRTUAL_PORT=9981
