@@ -1,12 +1,15 @@
-version: '2'
-
+version: '3.7'
 services:
-  iobroker:
-    container_name: iobroker
-    image: buanet/iobroker
-    hostname: iobroker
+  app_proxy:
+    environment:
+      APP_HOST: $APP_IOBROKER_IP
+      APP_PORT: 8081
+      PROXY_AUTH_ADD: 'false'
+  server:
+    image: buanet/iobroker:v9.1.2@sha256:2e10cfb72d10c7dc8a86b9ff813e1539f7386b932993420e93afa077a972dfb0
+    networks:
+      default:
+        ipv4_address: $APP_IOBROKER_IP
     restart: always
-    ports:
-      - "9981:8081"
-         volumes:
-      - iobrokerdata:/opt/iobroker
+    volumes:
+      - ${APP_DATA_DIR}/data:/opt/iobroker
