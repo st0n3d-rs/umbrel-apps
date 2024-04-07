@@ -1,18 +1,12 @@
-version: '3.7'
+version: '2'
+
 services:
-  app_proxy:
-    environment:
-      APP_HOST: $APP_IOBROKER_IP
-      APP_PORT: 9981
-      PROXY_AUTH_ADD: 'false'
-  server:
-    image: buanet/ioBroker:latest
-    command: '-H unix:///var/run/docker.sock'
-    environment:
-      - VIRTUAL_PORT=9981
-    networks:
-      default:
-        ipv4_address: $APP_IOBROKER_IP
+  iobroker:
+    container_name: iobroker
+    image: buanet/iobroker
+    hostname: iobroker
     restart: always
-    volumes:
-      - ${APP_DATA_DIR}/data:/opt/iobroker
+    ports:
+      - "9981:8081"
+         volumes:
+      - iobrokerdata:/opt/iobroker
