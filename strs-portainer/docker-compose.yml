@@ -2,11 +2,10 @@ version: '3.7'
 services:
 container_name: portainer
   server:
-    image: portainer/portainer-ce:2.19.4@sha256:908d04d20e86f07a50b0f1a029a111b89aa3089b7fc7fdf68ec1c71b025f36cd
+    image: portainer/portainer-ce:2.18.4@sha256:908d04d20e86f07a50b0f1a029a111b89aa3089b7fc7fdf68ec1c71b025f36cd
     command: '-H unix:///var/run/docker.sock'
     networks:
-      default:
-        ipv4_address: $APP_PORTAINER_IP
+      - host
       ports:
       - 9000:9000
     restart: always
