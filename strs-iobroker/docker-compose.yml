@@ -12,5 +12,4 @@ services:
         ipv4_address: $APP_IOBROKER_IP
     restart: always
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
       - ioBroker_data:/opt/iobroker
