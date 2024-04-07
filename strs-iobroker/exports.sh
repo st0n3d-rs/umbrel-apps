@@ -1,0 +1,2 @@
+export APP_IOBROKER_PORT="9981"
+export APP_IOBROKER_IP="10.21.99.5"
