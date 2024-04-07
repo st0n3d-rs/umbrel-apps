@@ -3,7 +3,7 @@ services:
   app_proxy:
     environment:
       APP_HOST: $APP_IOBROKER_IP
-      APP_PORT: 8081
+      APP_PORT: 9981
       PROXY_AUTH_ADD: 'false'
   server:
     image: buanet/iobroker:v9.1.2@sha256:2e10cfb72d10c7dc8a86b9ff813e1539f7386b932993420e93afa077a972dfb0
